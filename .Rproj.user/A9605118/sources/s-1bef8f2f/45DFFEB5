@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568125162497.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "45DFFEB5",
+    "lastKnownWriteTime" : 1568125211,
+    "last_content_update" : 1568125211071,
+    "path" : "~/Blogdown/Website100919/config/_default/menus.toml",
+    "project_path" : "config/_default/menus.toml",
+    "properties" : {
+        "cursorPosition" : "28,2",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "toml"
+}
