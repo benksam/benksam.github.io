@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3909747611",
+    "hash" : "4002657405",
     "id" : "1D77B184",
-    "lastKnownWriteTime" : 1568122811,
-    "last_content_update" : 1568122811,
+    "lastKnownWriteTime" : 1568137720,
+    "last_content_update" : 1568137720641,
     "path" : "~/Blogdown/Website100919/content/project/internal-project/index.md",
     "project_path" : "content/project/internal-project/index.md",
     "properties" : {
+        "cursorPosition" : "6,29",
+        "scrollLine" : "1"
     },
     "read_only" : false,
     "read_only_alternatives" : [
