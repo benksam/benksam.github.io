@@ -13,14 +13,6 @@
     </image>
     
     <item>
-      <title>External Project</title>
-      <link>/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Internal Project</title>
       <link>/project/internal-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
@@ -34,6 +26,478 @@
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Income, Energy Consumption and CO2-Emissions with R Notebook</title>
+      <link>/project/external-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/external-project/</guid>
+      <description>
+
+
+&lt;hr /&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This is an &lt;a href=&#34;http://rmarkdown.rstudio.com&#34;&gt;R Markdown&lt;/a&gt; Notebook. In this document, the analysis from the last &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1NZpys5yniDyOuUPxV7JKWkcTP-FUZL1esZSvUitZPd0/edit?usp=sharing&#34;&gt;Google Sheets Document&lt;/a&gt; will be extended by:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Visualizing in R the relationships between Income, Energy consumption and CO2-emission,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Incrementing the dataset with further Energy- and CO2-emissions related variables, and thereafter expand the previous correlation matrix with additional Income-, Energy- and CO2-emissions-related variables,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Performing a Cluster Analysis based on a Multivariate Factor Analysis (MFA), a method that aims at synthesizing the information from all available data on Income, Energy and CO2-emissions.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Visualizing the results from the Cluster Analysis on ArcGIS.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The considered dataset was used in an earlier project on &lt;em&gt;Sustainable Energy Consumption&lt;/em&gt; - hence not up to date - and was sourced from the World Bank.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;premilimary-illustrations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Premilimary Illustrations&lt;/h2&gt;
+&lt;p&gt;To illustrate the revolving idea behind how some variables relate to each others, i.e. the notion of relationships or correlation &lt;em&gt;(sammenhæng)&lt;/em&gt;, let’s start these 2 common examples found on the net.&lt;/p&gt;
+&lt;p&gt;Consider first the amount of limonade sold in function of the day’s temperature.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sales &amp;lt;- data.frame(c(14.2, 16.4, 11.9, 15.2, 18.5, 22.1, 19.4, 25.1, 23.4, 18.1, 22.6, 17.2),
+                    c(215, 325, 185, 332, 406, 522, 412, 614, 544, 421, 445, 408))
+colnames(sales) &amp;lt;- c(&amp;quot;Temperature (C)&amp;quot;,&amp;quot;Limonade Sales (Quantity)&amp;quot;)
+sales&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Temperature (C) Limonade Sales (Quantity)
+## 1             14.2                       215
+## 2             16.4                       325
+## 3             11.9                       185
+## 4             15.2                       332
+## 5             18.5                       406
+## 6             22.1                       522
+## 7             19.4                       412
+## 8             25.1                       614
+## 9             23.4                       544
+## 10            18.1                       421
+## 11            22.6                       445
+## 12            17.2                       408&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The values can be represented graphically as below.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(sales)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../project/external-project/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As can be seen, there seems to be a relationship between the amount of limonade sold and the temperature of the day, and a positive one.&lt;/p&gt;
+&lt;p&gt;In contrast, consider the amount of gazoline left in the tank of a car as the car travels a certain distance.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tankLevel &amp;lt;- data.frame(c(0, 50, 150, 275, 350, 425, 540, 680, 700, 750),
+                    c(15, 14, 12, 9.5, 8, 6.5, 4.2, 1.4, 1, 0))
+colnames(tankLevel) &amp;lt;- c(&amp;quot;Distance Travelled (km)&amp;quot;,&amp;quot;Gazoline Level (Quantity)&amp;quot;)
+tankLevel&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Distance Travelled (km) Gazoline Level (Quantity)
+## 1                        0                      15.0
+## 2                       50                      14.0
+## 3                      150                      12.0
+## 4                      275                       9.5
+## 5                      350                       8.0
+## 6                      425                       6.5
+## 7                      540                       4.2
+## 8                      680                       1.4
+## 9                      700                       1.0
+## 10                     750                       0.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Graphically,&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(tankLevel)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../project/external-project/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Again, there appears to be a relationship between the amount of distance travelled and the level of gazoline in the tank of the car. Although this time, even more clearly, the graph demonstrates a negative relationship.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sustainable-energy-consumption&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Sustainable Energy Consumption&lt;/h2&gt;
+&lt;p&gt;Now that the idea of relationship, or &lt;em&gt;correlation&lt;/em&gt;, has been introduced, let’s shift back to the analysis considered at the beginning of the document. Among the questions that the analysis will try to answer, here are a few ones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Do average income, energy consumption and CO2-emissions of the countries of the world relate to each other?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Do these different patterns of relationship also hold for other income-, energy- and CO2-emissions-related variables?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Given a region or income level, how (dis)similar are countries in terms of Energy Consumption and CO2-emissions?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The analysis will be carried out in R and requires the use of the following packages (a collection of many functions):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(PerformanceAnalytics)
+library(gdata)
+library(FactoMineR)
+library(missMDA)
+library(sp)
+# library(arcgisbinding)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To start, let’s read the available data on Income, Energy Consumption and CO2-emissions.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Energy_comp = read.csv(&amp;quot;https://sanktpetriskole.maps.arcgis.com/sharing/rest/content/items/c52d0e61a2b44240b1a76a012d18664d/data&amp;quot;,
+                       header=TRUE,sep=&amp;quot;,&amp;quot;, dec=&amp;quot;.&amp;quot;, 
+                       row.names = 1)
+dim(Energy_comp)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 147  18&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As can be seen, the data consists of 147 countries of the world, the different regions/categories they belong to and the 3 afore-mentioned variable groups with 18 columns in total.&lt;/p&gt;
+&lt;p&gt;Let’s have a preview of the dataset:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(Energy_comp, 10)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##             Country.Name                     Region        Income.Group
+## AFG          Afghanistan                 South Asia          Low income
+## AGO               Angola         Sub-Saharan Africa Lower middle income
+## ALB              Albania      Europe &amp;amp; Central Asia Upper middle income
+## ARE United Arab Emirates Middle East &amp;amp; North Africa         High income
+## ARG            Argentina  Latin America &amp;amp; Caribbean Upper middle income
+## ARM              Armenia      Europe &amp;amp; Central Asia Lower middle income
+## AUS            Australia        East Asia &amp;amp; Pacific         High income
+## AUT              Austria      Europe &amp;amp; Central Asia         High income
+## AZE           Azerbaijan      Europe &amp;amp; Central Asia Upper middle income
+## BDI              Burundi         Sub-Saharan Africa          Low income
+##     Population GDP..Mio.USD. GDP.per.capita   HDI
+## AFG   34656032       65142.8         1802.7 0.479
+## AGO   28813463      186327.0         5984.6 0.533
+## ALB    2876101       34126.4        11359.2 0.764
+## ARE    9269612      672419.6        67133.1 0.840
+## ARG   43847430      876012.1        18489.4 0.827
+## ARM    2924816       25884.4         8190.2 0.743
+## AUS   24127159     1128908.0        44260.6 0.939
+## AUT    8747358      443005.0        44438.7 0.893
+## AZE    9762274      168713.8        16001.3 0.759
+## BDI   10524117        8201.1          721.2 0.404
+##     Electricity.Consumption.per.capita..kWh
+## AFG                                   10.00
+## AGO                                  312.48
+## ALB                                 2309.37
+## ARE                                11263.53
+## ARG                                 3052.38
+## ARM                                 1965.78
+## AUS                                10059.21
+## AUT                                 8360.52
+## AZE                                 2202.39
+## BDI                                   10.00
+##     Fossil.fuel.energy.consumption..pct..of.total.
+## AFG                                       56.31438
+## AGO                                       48.28000
+## ALB                                       61.42000
+## ARE                                       99.81000
+## ARG                                       88.54000
+## ARM                                       74.56000
+## AUS                                       93.39000
+## AUT                                       64.90000
+## AZE                                       98.37000
+## BDI                                       55.73222
+##     Electricity.production.from.oil.sources..pct..of.total.
+## AFG                                                24.65847
+## AGO                                                46.82000
+## ALB                                                 0.00000
+## ARE                                                 1.34000
+## ARG                                                13.83000
+## ARM                                                 0.00000
+## AUS                                                 2.02000
+## AUT                                                 0.99000
+## AZE                                                 0.16000
+## BDI                                                27.22136
+##     Electricity.production.from.oil.gas.coal.sources..pct.of.total.
+## AFG                                                        57.28404
+## AGO                                                        46.82000
+## ALB                                                         0.00000
+## ARE                                                        99.73000
+## ARG                                                        64.39000
+## ARM                                                        42.44000
+## AUS                                                        85.09000
+## AUT                                                        17.73000
+## AZE                                                        94.02000
+## BDI                                                        59.32039
+##     Electricity.production.from.hydroelectric.sources..pct.of.total.
+## AFG                                                         37.86226
+## AGO                                                         53.18000
+## ALB                                                        100.00000
+## ARE                                                          0.00000
+## ARG                                                         29.04000
+## ARM                                                         25.70000
+## AUS                                                          7.41000
+## AUT                                                         66.57000
+## AZE                                                          5.26000
+## BDI                                                         37.62264
+##     Electricity.production.from.renewables.sources...excl..hydroelectric..pct.of.total.
+## AFG                                                                            3.689814
+## AGO                                                                            0.000000
+## ALB                                                                            0.000000
+## ARE                                                                            0.270000
+## ARG                                                                            2.500000
+## ARM                                                                            0.050000
+## AUS                                                                            7.500000
+## AUT                                                                           14.560000
+## AZE                                                                            0.370000
+## BDI                                                                            2.937671
+##     Alternative.and.nuclear.energy..pct..of.total.energy.use.
+## AFG                                                  5.081635
+## AGO                                                  2.950000
+## ALB                                                 17.920000
+## ARE                                                  0.100000
+## ARG                                                  5.880000
+## ARM                                                 27.510000
+## AUS                                                  2.550000
+## AUT                                                 12.870000
+## AZE                                                  0.780000
+## BDI                                                  3.303454
+##     Energy.use.per.capita..kg.oil.eq. CO2.emissions..kt.
+## AFG                             50.00            9809.23
+## AGO                            545.04           34763.16
+## ALB                            808.46            5716.85
+## ARE                           7769.23          211369.55
+## ARG                           2015.19          204024.55
+## ARM                           1018.07            5529.84
+## AUS                           5328.22          361261.84
+## AUT                           3765.43           58712.34
+## AZE                           1502.08           37487.74
+## BDI                             50.00             440.04
+##     CO2.emissions..tons.per.capita.
+## AFG                            0.30
+## AGO                            1.29
+## ALB                            1.98
+## ARE                           23.30
+## ARG                            4.75
+## ARM                            1.90
+## AUS                           15.37
+## AUT                            6.87
+## AZE                            3.93
+## BDI                            0.04
+##     CO2.emissions.from.transport..pct.of.total.fuel.combustion.
+## AFG                                                    39.70712
+## AGO                                                    43.99000
+## ALB                                                    59.95000
+## ARE                                                    21.04000
+## ARG                                                    24.17000
+## ARM                                                    27.78000
+## AUS                                                    24.74000
+## AUT                                                    36.62000
+## AZE                                                    24.49000
+## BDI                                                    40.07004&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A summary of the dataset follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(summary(Energy_comp))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Country.Name                        Region  
+##  Namibia    :  2   East Asia &amp;amp; Pacific       :17  
+##  Afghanistan:  1   Europe &amp;amp; Central Asia     :47  
+##  Albania    :  1   Latin America &amp;amp; Caribbean :23  
+##  Algeria    :  1   Middle East &amp;amp; North Africa:17  
+##  Angola     :  1   North America             : 2  
+##  Argentina  :  1   South Asia                : 7  
+##  (Other)    :140   Sub-Saharan Africa        :34  
+##               Income.Group   Population        GDP..Mio.USD.     
+##  High income        :46    Min.   :3.195e+04   Min.   :     100  
+##  Low income         :23    1st Qu.:4.733e+06   1st Qu.:   38279  
+##  Lower middle income:36    Median :1.065e+07   Median :  153199  
+##  Upper middle income:42    Mean   :4.801e+07   Mean   :  796355  
+##                            3rd Qu.:3.547e+07   3rd Qu.:  510809  
+##                            Max.   :1.379e+09   Max.   :21450968  
+##                                                                  
+##  GDP.per.capita        HDI         Electricity.Consumption.per.capita..kWh
+##  Min.   :   100   Min.   :0.3520   Min.   :   10.0                        
+##  1st Qu.:  5219   1st Qu.:0.6115   1st Qu.:  579.2                        
+##  Median : 13921   Median :0.7360   Median : 2202.4                        
+##  Mean   : 19788   Mean   :0.7100   Mean   : 3911.1                        
+##  3rd Qu.: 26569   3rd Qu.:0.8285   3rd Qu.: 5032.5                        
+##  Max.   :118207   Max.   :0.9490   Max.   :53832.5                        
+##                                                                           
+##  Fossil.fuel.energy.consumption..pct..of.total.
+##  Min.   :  5.36                                
+##  1st Qu.: 54.28                                
+##  Median : 67.99                                
+##  Mean   : 65.89                                
+##  3rd Qu.: 85.48                                
+##  Max.   :100.00                                
+##                                                
+##  Electricity.production.from.oil.sources..pct..of.total.
+##  Min.   : 0.00                                          
+##  1st Qu.: 0.35                                          
+##  Median : 2.84                                          
+##  Mean   :15.04                                          
+##  3rd Qu.:22.68                                          
+##  Max.   :99.46                                          
+##                                                         
+##  Electricity.production.from.oil.gas.coal.sources..pct.of.total.
+##  Min.   :  0.00                                                 
+##  1st Qu.: 38.20                                                 
+##  Median : 58.02                                                 
+##  Mean   : 57.88                                                 
+##  3rd Qu.: 86.47                                                 
+##  Max.   :100.00                                                 
+##                                                                 
+##  Electricity.production.from.hydroelectric.sources..pct.of.total.
+##  Min.   :  0.000                                                 
+##  1st Qu.:  4.495                                                 
+##  Median : 27.610                                                 
+##  Mean   : 30.089                                                 
+##  3rd Qu.: 41.600                                                 
+##  Max.   :100.000                                                 
+##                                                                  
+##  Electricity.production.from.renewables.sources...excl..hydroelectric..pct.of.total.
+##  Min.   : 0.000                                                                     
+##  1st Qu.: 0.125                                                                     
+##  Median : 3.056                                                                     
+##  Mean   : 6.499                                                                     
+##  3rd Qu.: 7.235                                                                     
+##  Max.   :55.830                                                                     
+##                                                                                     
+##  Alternative.and.nuclear.energy..pct..of.total.energy.use.
+##  Min.   : 0.00                                            
+##  1st Qu.: 1.33                                            
+##  Median : 5.11                                            
+##  Mean   :10.22                                            
+##  3rd Qu.:12.29                                            
+##  Max.   :91.98                                            
+##                                                           
+##  Energy.use.per.capita..kg.oil.eq. CO2.emissions..kt.
+##  Min.   :   50.0                   Min.   :      50  
+##  1st Qu.:  542.3                   1st Qu.:    6302  
+##  Median : 1337.4                   Median :   26450  
+##  Mean   : 2213.2                   Mean   :  224420  
+##  3rd Qu.: 2771.2                   3rd Qu.:   95844  
+##  Max.   :18562.7                   Max.   :10291927  
+##                                                      
+##  CO2.emissions..tons.per.capita.
+##  Min.   : 0.010                 
+##  1st Qu.: 0.840                 
+##  Median : 3.050                 
+##  Mean   : 4.786                 
+##  3rd Qu.: 6.220                 
+##  Max.   :45.420                 
+##                                 
+##  CO2.emissions.from.transport..pct.of.total.fuel.combustion.
+##  Min.   : 3.54                                              
+##  1st Qu.:23.60                                              
+##  Median :34.78                                              
+##  Mean   :34.05                                              
+##  3rd Qu.:40.51                                              
+##  Max.   :96.78                                              
+## &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;PS&lt;/strong&gt;: the existence of missing values for some variables was dealt with imputation methods from the package &lt;em&gt;missMDA&lt;/em&gt;. Suffice to write here that the original dataset was trimmed of some countries that lack many values, while at the same time, 37 countries were kept for the analysis by imputing some of their missing values using the correlation structure of the dataset. Refer to this &lt;a href=&#34;https://arcg.is/uW4Ky&#34;&gt;App&lt;/a&gt; to compare the analysis with complete observations (110) and the one based on the augmented dataset (the current one) with imputed observations (147).&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-correlations-from-the-lectures-dataset&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simple correlations from the lecture’s dataset&lt;/h2&gt;
+&lt;p&gt;With this dataset, one can visualize the few correlations introduced in the &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1NZpys5yniDyOuUPxV7JKWkcTP-FUZL1esZSvUitZPd0/edit?usp=sharing&#34;&gt;Google Sheets Document&lt;/a&gt;. This is done with the package &lt;em&gt;PerformanceAnalytics&lt;/em&gt; as follows.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;chart.Correlation(Energy_comp[,c(6,15,17)], histogram=TRUE, pch=19)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../project/external-project/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Focusing first on the scatterplots, the graphical matrix could be read as one read for example a multiplication table, that is reading the rows first and then the columns: There, were the row belonging to &lt;em&gt;Energy Use per Capita&lt;/em&gt; meets the column of &lt;em&gt;GDP per Capita&lt;/em&gt;, the scatter-plot suggests a rather pronounced correlation between these 2 variables, although the correlation between &lt;em&gt;Energy Use per Capita&lt;/em&gt; and &lt;em&gt;CO2 Emissions per Capita&lt;/em&gt; appears to be slightly more significant. Not surprisingly given the well-known fact that fossile fuels still account for about 80 pct. of total energy consumed on the global level, far ahead of the share of renewable energy sources (around 10 pct.) as discussed during the lectures.&lt;/p&gt;
+&lt;p&gt;The 3 scatterplots can be drawn once more, this time visualizing the income groups each country (point) pertains to:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lower.panel&amp;lt;-function(x, y){
+  points(x,y, pch=19, col=c(&amp;quot;red&amp;quot;, &amp;quot;green&amp;quot;, &amp;quot;blue&amp;quot;, &amp;quot;grey&amp;quot;)[Energy_comp$Income.Group])
+  r &amp;lt;- round(cor(x, y), digits=2)
+  txt &amp;lt;- paste0(&amp;quot;R = &amp;quot;, r)
+  usr &amp;lt;- par(&amp;quot;usr&amp;quot;); on.exit(par(usr))
+  par(usr = c(0, 1, 0, 1))
+  text(0.5, 0.9, txt)
+}
+pairs(Energy_comp[,c(6,15,17)], upper.panel = NULL, 
+      lower.panel = lower.panel)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../project/external-project/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;strong&gt;PS&lt;/strong&gt;: The colour conventions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Red&lt;/strong&gt; for &lt;em&gt;high income&lt;/em&gt; countries&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Green&lt;/strong&gt; for &lt;em&gt;low income&lt;/em&gt; countries&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blue&lt;/strong&gt; for &lt;em&gt;lower middle income&lt;/em&gt; countries&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Grey&lt;/strong&gt; for &lt;em&gt;upper middle income&lt;/em&gt; countries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;extended-correlation-structure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Extended Correlation Structure&lt;/h2&gt;
+&lt;p&gt;In the same fashion, one can expand the correlation matrix to include the remainder of the continuous variables at hand:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;chart.Correlation(Energy_comp[,c(5:18)], histogram=TRUE, pch=19)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../project/external-project/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Given the difficulty to distinguish between the details in such a graphical illustration, one can list the strongest correlations among all variables. This have been carried out in the next code chunk. In passing, note that the strongest relationships in the matrix are suggested by the number of red stars (3 means likelier relationships) or the numerical value of the correlation coefficient (stronger correlations where the coefficient is closer to 1 in absolute terms). Any biasing effects from outliers have been ignored.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;corm &amp;lt;- cor(Energy_comp[,c(5:18)])
+corm[lower.tri(corm)] &amp;lt;- 0
+corm[lower.tri(corm,diag=TRUE)] &amp;lt;- 0
+cor &amp;lt;- as.data.frame(as.table(corm))
+high&amp;lt;-subset(cor, abs(Freq) &amp;gt; 0.6)
+as.matrix(high[order(-high[,3]),])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     Var1                                                             
+## 155 &amp;quot;GDP..Mio.USD.&amp;quot;                                                  
+## 144 &amp;quot;Electricity.Consumption.per.capita..kWh&amp;quot;                        
+## 179 &amp;quot;Energy.use.per.capita..kg.oil.eq.&amp;quot;                              
+## 170 &amp;quot;GDP.per.capita&amp;quot;                                                 
+## 142 &amp;quot;GDP.per.capita&amp;quot;                                                 
+## 30  &amp;quot;GDP.per.capita&amp;quot;                                                 
+## 44  &amp;quot;GDP.per.capita&amp;quot;                                                 
+## 89  &amp;quot;Fossil.fuel.energy.consumption..pct..of.total.&amp;quot;                 
+## 187 &amp;quot;Fossil.fuel.energy.consumption..pct..of.total.&amp;quot;                 
+## 133 &amp;quot;Electricity.production.from.oil.gas.coal.sources..pct.of.total.&amp;quot;
+## 105 &amp;quot;Electricity.production.from.oil.gas.coal.sources..pct.of.total.&amp;quot;
+##     Var2                                                              
+## 155 &amp;quot;CO2.emissions..kt.&amp;quot;                                              
+## 144 &amp;quot;Energy.use.per.capita..kg.oil.eq.&amp;quot;                               
+## 179 &amp;quot;CO2.emissions..tons.per.capita.&amp;quot;                                 
+## 170 &amp;quot;CO2.emissions..tons.per.capita.&amp;quot;                                 
+## 142 &amp;quot;Energy.use.per.capita..kg.oil.eq.&amp;quot;                               
+## 30  &amp;quot;HDI&amp;quot;                                                             
+## 44  &amp;quot;Electricity.Consumption.per.capita..kWh&amp;quot;                         
+## 89  &amp;quot;Electricity.production.from.oil.gas.coal.sources..pct.of.total.&amp;quot; 
+## 187 &amp;quot;CO2.emissions.from.transport..pct.of.total.fuel.combustion.&amp;quot;     
+## 133 &amp;quot;Alternative.and.nuclear.energy..pct..of.total.energy.use.&amp;quot;       
+## 105 &amp;quot;Electricity.production.from.hydroelectric.sources..pct.of.total.&amp;quot;
+##     Freq        
+## 155 &amp;quot; 0.9527348&amp;quot;
+## 144 &amp;quot; 0.8760625&amp;quot;
+## 179 &amp;quot; 0.8594627&amp;quot;
+## 170 &amp;quot; 0.8343659&amp;quot;
+## 142 &amp;quot; 0.8151981&amp;quot;
+## 30  &amp;quot; 0.7420396&amp;quot;
+## 44  &amp;quot; 0.6840740&amp;quot;
+## 89  &amp;quot; 0.6123586&amp;quot;
+## 187 &amp;quot;-0.6460173&amp;quot;
+## 133 &amp;quot;-0.6515375&amp;quot;
+## 105 &amp;quot;-0.8331979&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The correlation coefficients are arranged in descending order, and the ones of interest are those that are closest to 1 in absolute values.&lt;/p&gt;
+&lt;p&gt;Hence, there seems to be further relevant correlations among the variables from the extended dataset. To name a few …&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;On the positive side:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Total income and total CO2-emissions,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Electricity Consumption and Energy Use per capita,&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;On the negative side:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Electricity production from fossile fuels and from hydroelectric sources&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Electricity production from fossile fuels and from alternative and nuclear energy&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This seems in line with general intuition and corroborates earlier observations.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hierarchical-clustering&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Hierarchical Clustering&lt;/h2&gt;
+&lt;p&gt;Moving now the focus towards the study of the many countries of the world and how (dis)similar they are with respect to each other in term of income, energy use and CO2-emissions, the many variables at hand can be synthethised to help us better answer a few additional questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Are there group of countries that shows the same pattern of income level, energy consumption and CO2-emissions?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If so, which cluster of countries shows similarities or, by contrast, dissimilarities in terms of income level, energy consumption and CO2-emissions?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These questions and many others can be answered by means of a Cluster Analysis, and the chosen method is hierarchical clustering, the one that by default is provided by the library &lt;em&gt;FactoMineR&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Prior to this, a Multivariate Factor Analysis was undertaken so as to reduce the multidimensionality of the dataset, but at the same time, to take into account the grouped nature of the dataset’s variables. This can be helpful when it comes to group the 147 countries into different clusters and characterise each resulting clusters by means of the synthetic variables that emerge from such an analysis.&lt;/p&gt;
+&lt;p&gt;The detailed outline of this analysis is skipped, but the relevant code chunks are provided as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;res &amp;lt;- MFA(Energy_comp[,c(2:18)], group=c(1,1,2,2,8,3), type=c(rep(&amp;quot;n&amp;quot;,2),rep(&amp;quot;s&amp;quot;,4)),
+           ncp=4, graph=F, name.group=c(&amp;quot;Region&amp;quot;,&amp;quot;IncomeGroup&amp;quot;,&amp;quot;Desc&amp;quot;,&amp;quot;Income&amp;quot;,&amp;quot;Energy&amp;quot;,&amp;quot;Emmissions&amp;quot;),
+           num.group.sup=c(2:3))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;res.hcpc &amp;lt;- HCPC(res, kk = Inf, graph=F)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once the different clusters have been obtained (their numbers specified with some degree of subjectivity, see later), these can be transferred and mapped in &lt;a href=&#34;https://sanktpetriskole.maps.arcgis.com/apps/View/index.html?appid=39999e464aa94b528d7eb0d2c5543561&#34;&gt;ArcGIS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is also a &lt;a href=&#34;https://drive.google.com/open?id=1vyLpeukQfa64Bq5P0KbWMXfSb2s_foBj&#34;&gt;screenshot&lt;/a&gt; of the resulting clustering.&lt;/p&gt;
+&lt;p&gt;When it comes to interpretate the resulting clustering, the different outputs from the above 2 code chunks are handy. Keeping it short, among the main observations that can be derived from the outputs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 5&lt;/strong&gt;: Countries with respectively high income, energy use and CO2-emissions per capita.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 1&lt;/strong&gt;: Countries with respectively low income, energy use and CO2-emissions per capita.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 4&lt;/strong&gt;: Countries with high total income, energy use and CO2-emissions.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 3&lt;/strong&gt;: Countries with relatively:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;high proportion of alternative and nuclear energy content in their total energy use; high proportion of electricity production from hydroelectric sources; high proportion of CO2-emissions from transport as a percentage of total fuel combustion; high electricity consumption per capita.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Low proportion of electricity production from fossil fuel sources; low proportion of fossil fuel energy consumption as a percentage of total energy use.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 2&lt;/strong&gt;: In contrast with &lt;strong&gt;Cluster 3&lt;/strong&gt;, these are countries with relatively:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;high proportion of fossil fuel energy consumption as a percentage of total energy use; high proportion of electricity production from fossil fuel sources; high HDI (Human Development Index).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;low proportion of CO2-emissions from transport as a percentage of total fuel combustion; low proportion of electricity production from hydroelectric sources; low proportion of alternative and nuclear energy content in their total energy use;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the same token, focusing on the 2 categorical variables of the analysis, namely &lt;em&gt;Regions&lt;/em&gt; and &lt;em&gt;IncomeGroup&lt;/em&gt;, the following observations can be made from the code output:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 1&lt;/strong&gt; tend to be overrepresented by &lt;em&gt;Sub-Saharan&lt;/em&gt; and &lt;em&gt;Low Income&lt;/em&gt; countries.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 2&lt;/strong&gt; contains a higher proportion of &lt;em&gt;Upper Middle Income&lt;/em&gt; countries and &lt;em&gt;European/Central Asian&lt;/em&gt; countries.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 3&lt;/strong&gt; are all &lt;em&gt;High Income&lt;/em&gt; countries, most of which are &lt;em&gt;European/Central Asian&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cluster 5&lt;/strong&gt; are all &lt;em&gt;High Income&lt;/em&gt; countries, most of them belonging to the &lt;em&gt;Middle East and North African&lt;/em&gt; regions.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;final-thoughts&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+&lt;p&gt;Cluster analysis, along with Multivariate Factor Analysis, are methods used to synthethise available information in a given dataset that usually contains more than 10 variables. From this preliminary analysis:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Most of the results - notwithstanding the outdated nature of some variables (a few dating back from 2011) - are in line with what one would expect from the relationships between Income, Energy Consumption and CO2-emissions.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A few countries have been surprisingly clustered with others e.g. across different income groups, something that seems to contradict common understanding. Given the use of MFA as the preliminary tool for dimensionality reduction, these artifacts, that by themselves deserve checking the original dataset and/or further investigations, could a priori be justified by the rebalancing nature of the MFA-methodology: no group among the afore-mentioned 3 is allowed to outweight the other 2 when it comes to define the primary components of variability in the dataset. A cluster analysis based on a standard PCA would have resulted in different clusterings, arguably more in line with common intuition.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The defined numbers of clustering is to some extent a matter of subjectivity (albeit a few criteria exists to optimally define the right ratio between inter and total inertia), and a different level of clustering would probably have made this analysis either too simplistic (loosing some interesting insigths, which this analysis has already done by only accounting for the first 2 dimensions of variability representing slightly above 50 pct. of all information in the dataset) or too detailed to easily discern common patterns between the dataset’s observations.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;These limitations and other warrants further study of such an interesting topic.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 </description>
     </item>
     
