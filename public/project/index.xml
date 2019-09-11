@@ -13,7 +13,15 @@
     </image>
     
     <item>
-      <title>Income, Energy Consumption and CO2-Emissions with R Notebook</title>
+      <title>Income, Energy consumption and CO2 emissions (Shiny App)</title>
+      <link>/project/internal-project/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/project/internal-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Income, Energy Consumption and CO2-Emissions (R Notebook)</title>
       <link>/project/external-project/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       <guid>/project/external-project/</guid>
@@ -485,10 +493,10 @@ as.matrix(high[order(-high[,3]),])&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
-      <title>Shiny Apps project</title>
-      <link>/project/internal-project/</link>
+      <title>Sustainable Agriculture (Shiny App)</title>
+      <link>/project/internal-project-2/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
+      <guid>/project/internal-project-2/</guid>
       <description></description>
     </item>
     

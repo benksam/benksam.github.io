@@ -1,11 +1,11 @@
 ---
 date: "2018-04-27T00:00:00Z"
-external_link: http://datasyn.app
+external_link: http://energy.datasyn.app
 image:
   caption: Photo by Toa Heftiba on Unsplash
   focal_point: Smart
-summary: A collection of Shiny Apps created under a project in Geography.
+summary: An interactive Webapplication to discover relationships between income, energy consumption and CO2 emissions.
 tags:
 - Demo
-title: Shiny Apps project
+title: Income, Energy consumption and CO2 emissions (Shiny App)
 ---

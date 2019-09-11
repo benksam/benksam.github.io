@@ -113,6 +113,11 @@
   </url>
   
   <url>
+    <loc>/project/internal-project/</loc>
+    <lastmod>2018-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/project/external-project/</loc>
     <lastmod>2018-04-27T00:00:00+00:00</lastmod>
   </url>
@@ -123,7 +128,7 @@
   </url>
   
   <url>
-    <loc>/project/internal-project/</loc>
+    <loc>/project/internal-project-2/</loc>
     <lastmod>2018-04-27T00:00:00+00:00</lastmod>
   </url>
   

@@ -1,6 +1,6 @@
 ---
 date: "2018-04-27T00:00:00Z"
-title: "Income, Energy Consumption and CO2-Emissions with R Notebook"
+title: "Income, Energy Consumption and CO2-Emissions (R Notebook)"
 author: "Samir Benjelloun"
 output:
   html_document:
