@@ -23,7 +23,7 @@ date_format = "Jan 2006"
   company_url = ""
   location = "Copenhagen"
   date_start = "2013-10-01"
-  date_end = ""
+  date_end = "2019-07-31"
   description = """
   Responsibilities include:
   
@@ -40,5 +40,14 @@ date_format = "Jan 2006"
   date_start = "2017-07-01"
   date_end = "2017-07-31"
   description = """Analysis of Labor Productivity across Danish Counties and Regions by means of R programming."""
+  
+[[experience]]
+  title = "Self-Educated Web Developer"
+  company = ""
+  company_url = ""
+  location = "Trelleborg"
+  date_start = "2019-08-01"
+  date_end = ""
+  description = """Dockerizing and Orchestrating Web Applications with Docker and Kubernetes"""
 
 +++
