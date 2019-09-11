@@ -5,7 +5,7 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 27 Apr 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Projects</title>
@@ -13,17 +13,9 @@
     </image>
     
     <item>
-      <title>External Project</title>
-      <link>/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Income, Energy Consumption and CO2-Emissions with R Notebook</title>
       <link>/project/external-project/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       <guid>/project/external-project/</guid>
       <description>
 
@@ -490,6 +482,14 @@ as.matrix(high[order(-high[,3]),])&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Shiny Apps project</title>
+      <link>/project/internal-project/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/project/internal-project/</guid>
+      <description></description>
     </item>
     
   </channel>
