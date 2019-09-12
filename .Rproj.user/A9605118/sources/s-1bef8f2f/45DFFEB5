@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2102203339",
+    "hash" : "1282672265",
     "id" : "45DFFEB5",
-    "lastKnownWriteTime" : 1568125211,
-    "last_content_update" : 1568125211071,
+    "lastKnownWriteTime" : 1568273619,
+    "last_content_update" : 1568273619621,
     "path" : "~/Blogdown/Website100919/config/_default/menus.toml",
     "project_path" : "config/_default/menus.toml",
     "properties" : {
-        "cursorPosition" : "28,2",
-        "scrollLine" : "0"
+        "cursorPosition" : "13,0",
+        "scrollLine" : "6"
     },
     "read_only" : false,
     "read_only_alternatives" : [
