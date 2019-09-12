@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 12 Sep 2019 21:13:14 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 12 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -15,7 +15,7 @@
     <item>
       <title>job</title>
       <link>/tags/job/</link>
-      <pubDate>Thu, 12 Sep 2019 21:13:14 -0500</pubDate>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/tags/job/</guid>
       <description></description>
     </item>
@@ -23,7 +23,7 @@
     <item>
       <title>R Markdown</title>
       <link>/tags/r-markdown/</link>
-      <pubDate>Thu, 12 Sep 2019 21:13:14 -0500</pubDate>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/tags/r-markdown/</guid>
       <description></description>
     </item>
@@ -41,22 +41,6 @@
       <link>/tags/demo/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       <guid>/tags/demo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>plot</title>
-      <link>/tags/plot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/tags/plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>/tags/regression/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/tags/regression/</guid>
       <description></description>
     </item>
     
