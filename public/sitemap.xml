@@ -48,11 +48,6 @@
   </url>
   
   <url>
-    <loc>/post/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2019-09-12T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/job/</loc>
     <lastmod>2019-09-12T21:13:14-05:00</lastmod>
   </url>
@@ -73,22 +68,12 @@
   </url>
   
   <url>
-    <loc>/tags/plot/</loc>
-    <lastmod>2019-09-12T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/r/</loc>
     <lastmod>2019-09-12T21:13:14-05:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/r-markdown/</loc>
-    <lastmod>2019-09-12T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/regression/</loc>
     <lastmod>2019-09-12T21:13:14-05:00</lastmod>
   </url>
   
@@ -204,6 +189,18 @@
   
   <url>
     <loc>/courses/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/2015-07-23-r-rmarkdown/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/plot/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/regression/</loc>
   </url>
   
 </urlset>
