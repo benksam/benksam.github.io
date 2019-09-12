@@ -1,5 +1,5 @@
 ---
-title: "Job Search Report for August 2019"
+title: "Preliminary Job Search Report for August 2019"
 author: "Samir"
 date: 2019-09-12T21:13:14-05:00
 output: html_document
