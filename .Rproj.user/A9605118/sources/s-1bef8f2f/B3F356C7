@@ -2,19 +2,19 @@
     "collab_server" : "",
     "contents" : "",
     "created" : 1568122822675.000,
-    "dirty" : false,
+    "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "497266614",
+    "hash" : "0",
     "id" : "B3F356C7",
-    "lastKnownWriteTime" : 1568278941,
-    "last_content_update" : 1568278941647,
+    "lastKnownWriteTime" : 1568279299,
+    "last_content_update" : 1568279305177,
     "path" : "~/Blogdown/Website100919/content/post/2015-07-23-r-rmarkdown.Rmd",
     "project_path" : "content/post/2015-07-23-r-rmarkdown.Rmd",
     "properties" : {
-        "cursorPosition" : "2,20",
+        "cursorPosition" : "83,20",
         "last_setup_crc32" : "1bef8f2fbb338d19",
-        "scrollLine" : "0"
+        "scrollLine" : "68"
     },
     "read_only" : false,
     "read_only_alternatives" : [
