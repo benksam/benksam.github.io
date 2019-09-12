@@ -15,36 +15,45 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
 -----
 
-## Job Research Activities {.tabset .tabset-fade}
+## Job Search Activities {.tabset .tabset-fade}
 
 -----
 
 
 
-> **My job research activities have to be placed under the context of the many degrees that I acquired during my university studies, my professional experiences as a teacher among others and the career path I wish to undertake for the near future**. 
+> **My job research activities have to be placed under the context of the many degrees that I acquired during my university studies, my professional experiences as a teacher for example and the career path I wish to undertake for the near future**. 
 
 
 
 
 ### **Priority 1: Web developer**
 
-##### **Designing interactive Webapplications for education purposes.**
+##### **Designing interactive Webapplications for educational purposes.**
 
 ----
 
 
-> Given the recent experiences in Denmark while teaching the topics I feel most comfortable with i.e. French and Geography but mostly some unfortunate frictions between me and that school's leadership as well as a few colleagues, I consider that a career path change may be legitimate given my recent studies in economics, my interest in statistical tools and the recent experience I built up in coding web applications used in teaching Geography    
+> Given the recent experiences in Denmark while teaching the topics that I feel most comfortable with, i.e. French and Geography, but most importantly some unfortunate frictions between me and my earlier school's leadership as well as a few colleagues, I consider that a career path change may be legitimate given my recent studies in economics, my interests in statistical tools and the recent experiences that I accumulated in coding web applications used under different Geography projects.    
 
 
 
-> **Yet developing interactive webapplications to be consumed by students would also require additional skills beyond coding in R, the statistical programming language I am familiar with.**
+> **Yet developing interactive webapplications to be consumed by students would also require additional skills beyond coding in R, the statistical programming language that I am familiar with.**
 
 
-> Certainly, Webapplications can be hosted by 3. parties, but for the sake of much more flexibility and for economic reasons, self-hosted solutions makes more sense in my opinion. But this requires knowledge of:
+> Certainly, webapplications can be hosted by 3. parties, but for the sake of increased flexibility as well as for cost considerations, self-hosted solutions make more sense in my opinion. Yet this requires knowledge of:
 
 
 
@@ -56,7 +65,7 @@ projects: []
 
 
 
-Given the many job possibilities in Web-development with skills in relatively new technologies such as Kubernetes and optimal CI/CD pipelines or the like, I consider this priority an opportune one. 
+**Furthermore, in light of the many job possibilities in the field of web-development that demands skills in relatively new technologies such as Kubernetes, optimal CI/CD pipelines and the like, I consider this priority an opportune one.** 
 
 
 -----
@@ -70,25 +79,33 @@ Given the many job possibilities in Web-development with skills in relatively ne
 -----
 
 
-> As a parallel undertaking, searching for teacher jobs with subjects such as French, Maths and Geography was done, but such job positions come rarerely as full-time positions, which is why the 1st priority was laid down. In spite of this, I am open to take any teacher job in line with my competencies for the whole region of Skåne if needed, although I would expand my horizon and be ready to move anywhere in Sweden for a webdeveloper job. 
+> As a parallel undertaking, searching for teacher jobs with subjects such as French, Maths and Geography is continuously undertaken, but such job positions come rarerely as full-time positions, which is why the 1st priority was laid down and followed. In spite of my outlined priorities, I am open to take any teacher job in line with my competencies for the whole region of Skåne if needed, although I would expand my considerations and be ready to move anywhere in Sweden should a job position as webdeveloper turns out. 
 
 
 -----
 
 
-### **Priority 3: Dataanalyst**
+### **Priority 3: Data-analyst**
 
-##### **Econometrics for social sciences.**
+##### **Econometrics applied for social sciences.**
 
 
 -----
 
 
-> A third option is to consider jobs such as research assistants in economics or dataanalysist at universities. Realistically, my age and lack of relevant experience is at odd with getting success in finding such kind of jobs. But once again, I would actually prefer to work in the field of dataanalysis since closer to my interests (statistical programming and visualizations) but my efforts so far have been to get myself ready for a webdeveloper position or a teacher position in the topics that I am competent in 
+> A third option is to consider jobs such as research assistant in economics or data-analysist at universities for instance in the field of machine learning, multivariate analysis or social impact evaluation. Realistically, my age and lack of relevant experience is at odd with getting success in finding such kind of jobs. Hence, as another option and if the choice presents itself, I would be happy to work in the field of data-analysis since closer to my interests (statistical programming, analysis and visualization). But so far, my efforts have been mainly put in getting myself ready for a webdeveloper position or, alternatively, in finding a suitable teacher position in the topics that matches my skills.
 
  
 
 -----
 
 
-## Tabset closed ...
+## Planned activities for the near future ...
+
+-----
+
+
+
+> - Getting more routine and building up a suitable workflow in the development of webapplications, ie. coding applications (shiny apps/dashboards), building Docker images, deploying these applications via IBM cloud or similar, etc.
+> - Getting more familiar with related tasks to the above mentioned workflow: security issues, stateless vs stateful applications, administration and monitoring, etc.
+> - Searching for suitable job positions either as a teacher that matches my skill or data-analyst/research assitant in the social field as research assistant or the like. 
