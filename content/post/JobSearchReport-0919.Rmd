@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 -----
 
-## Job Research Activities {.tabset}
+## Job Research Activities {.tabset .tabset-fade}
 
 -----
 
