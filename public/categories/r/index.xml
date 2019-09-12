@@ -228,49 +228,70 @@
     <item>
       <title>Hello R Markdown</title>
       <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/post/2015-07-23-r-rmarkdown/</guid>
       <description>
 
 
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;div id=&#34;job-research-activities&#34; class=&#34;section level2 tabset tabset-fade&#34;&gt;
+&lt;h2&gt;Job Research Activities&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;My job research activities have to be placed under the context of the many degrees that I acquired during my university studies, my professional experiences as a teacher among others and the career path I wish to undertake for the near future&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id=&#34;priority-1-web-developer&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;strong&gt;Priority 1: Web developer&lt;/strong&gt;&lt;/h3&gt;
+&lt;div id=&#34;designing-interactive-webapplications-for-education-purposes.&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;&lt;strong&gt;Designing interactive Webapplications for education purposes.&lt;/strong&gt;&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given the recent experiences in Denmark while teaching the topics I feel most comfortable with i.e. French and Geography but mostly some unfortunate frictions between me and that school’s leadership as well as a few colleagues, I consider that a career path change may be legitimate given my recent studies in economics, my interest in statistical tools and the recent experience I built up in coding web applications used in teaching Geography&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Yet developing interactive webapplications to be consumed by students would also require additional skills beyond coding in R, the statistical programming language I am familiar with.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Certainly, Webapplications can be hosted by 3. parties, but for the sake of much more flexibility and for economic reasons, self-hosted solutions makes more sense in my opinion. But this requires knowledge of:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;The Linux OS and command line tools (Bash) as well as general administrative computer skills,&lt;/li&gt;
+&lt;li&gt;Version control tools such as Git for code storage, sharing and automating (CI/CD flows)&lt;/li&gt;
+&lt;li&gt;The containarisation of microservices, in particular tools such as Docker and Kubernetes, where different components of webapplications are made to function in clusters&lt;/li&gt;
+&lt;li&gt;Many related concepts/technologies working for the same goal of deploying final webapplications to be consumed by students, among others, networking and loadbalancing, storage and log monitoring, security issues, etc.&lt;/li&gt;
+&lt;li&gt;And further mastering of programming skills of Shiny Apps, Rmarkdown documents, Yaml files or the like.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Given the many job possibilities in Web-development with skills in relatively new technologies such as Kubernetes and optimal CI/CD pipelines or the like, I consider this priority an opportune one.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;../../post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;priority-2-teaching&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;strong&gt;Priority 2: Teaching&lt;/strong&gt;&lt;/h3&gt;
+&lt;div id=&#34;french-maths-geography-or-basic-itprogramming-skills.&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;&lt;strong&gt;French, Maths, Geography or basic IT/programming skills.&lt;/strong&gt;&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As a parallel undertaking, searching for teacher jobs with subjects such as French, Maths and Geography was done, but such job positions come rarerely as full-time positions, which is why the 1st priority was laid down. In spite of this, I am open to take any teacher job in line with my competencies for the whole region of Skåne if needed, although I would expand my horizon and be ready to move anywhere in Sweden for a webdeveloper job.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;priority-3-dataanalyst&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;strong&gt;Priority 3: Dataanalyst&lt;/strong&gt;&lt;/h3&gt;
+&lt;div id=&#34;econometrics-for-social-sciences.&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;&lt;strong&gt;Econometrics for social sciences.&lt;/strong&gt;&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A third option is to consider jobs such as research assistants in economics or dataanalysist at universities. Realistically, my age and lack of relevant experience is at odd with getting success in finding such kind of jobs. But once again, I would actually prefer to work in the field of dataanalysis since closer to my interests (statistical programming and visualizations) but my efforts so far have been to get myself ready for a webdeveloper position or a teacher position in the topics that I am competent in&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tabset-closed&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Tabset closed …&lt;/h2&gt;
 &lt;/div&gt;
 </description>
     </item>

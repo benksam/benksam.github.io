@@ -5,15 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "497266614",
     "id" : "B3F356C7",
-    "lastKnownWriteTime" : 1568122810,
-    "last_content_update" : 1568122810,
+    "lastKnownWriteTime" : 1568278294,
+    "last_content_update" : 1568278294266,
     "path" : "~/Blogdown/Website100919/content/post/2015-07-23-r-rmarkdown.Rmd",
     "project_path" : "content/post/2015-07-23-r-rmarkdown.Rmd",
     "properties" : {
-        "cursorPosition" : "3,0",
-        "scrollLine" : "0"
+        "cursorPosition" : "86,20",
+        "last_setup_crc32" : "1bef8f2fbb338d19",
+        "scrollLine" : "76"
     },
     "read_only" : false,
     "read_only_alternatives" : [
