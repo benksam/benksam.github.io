@@ -173,7 +173,24 @@
   </url>
   
   <url>
+    <loc>/post/energy_param03/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/courses/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/2015-07-23-r-rmarkdown/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/plot/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/regression/</loc>
   </url>
   
 </urlset>
