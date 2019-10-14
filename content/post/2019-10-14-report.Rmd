@@ -1,20 +1,24 @@
 ---
 title: "Job Search Report September-October 2019"
 author: 'Samir Benjelloun'
-date: '2019-10-14'
-slug: report
-categories: []
-tags: []
+date: '2019-09-12'
+slug: new-rmarkdown
+categories: ["R"]
+tags: ["R Markdown", "job"]
 subtitle: ''
 summary: ''
 authors: []
-lastmod: '2019-10-14T17:15:26Z'
+lastmod: '2019-09-12T09:09:01Z'
 featured: no
 image:
   caption: ''
   focal_point: ''
   preview_only: no
 projects: []
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
